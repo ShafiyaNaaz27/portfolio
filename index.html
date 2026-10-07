@@ -1,0 +1,1390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shafiya Naaz — Data & Business Analyst</title>
+<meta name="description" content="Shafiya Naaz — Data Analyst & Business Analyst helping companies make data-driven decisions">
+<meta name="keywords" content="Data Analyst, Business Analyst, Python, SQL, Power BI, Business Intelligence, Analytics">
+<meta name="author" content="Shafiya Naaz">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Shafiya Naaz — Data & Business Analyst">
+<meta property="og:description" content="Transforming data into business value through analytics and strategic insights.">
+<meta property="og:type" content="website">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-card: #16161f;
+  --text: #ffffff;
+  --text-muted: #9ca3af;
+  --text-secondary: #6b7280;
+  --border: #2a2a3a;
+  --accent: #6366f1;
+  --accent-light: #818cf8;
+  --accent-glow: rgba(99, 102, 241, 0.3);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --shadow: rgba(0, 0, 0, 0.6);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --nav-bg: rgba(10, 10, 15, 0.95);
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-secondary: #f8f9fc;
+  --bg-card: #ffffff;
+  --text: #1a1a2e;
+  --text-muted: #4b5563;
+  --text-secondary: #6b7280;
+  --border: #e5e7eb;
+  --accent: #4f46e5;
+  --accent-light: #6366f1;
+  --accent-glow: rgba(79, 70, 229, 0.15);
+  --shadow: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; transition: all 0.2s ease; }
+a:hover { color: var(--accent); }
+
+.wrap { max-width: 1200px; margin: auto; padding: 0 24px; }
+
+/* ===== NAVIGATION ===== */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.links {
+  display: flex;
+  gap: 28px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.links a:hover { color: var(--accent); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 20px;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: rotate(15deg);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, var(--bg) 0%, transparent 50%, var(--bg) 100%),
+    linear-gradient(90deg, var(--bg) 0%, transparent 50%, var(--bg) 100%),
+    url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+  filter: brightness(0.4) contrast(1.1);
+  z-index: -1;
+  animation: bgPan 30s ease-in-out infinite alternate;
+}
+
+@keyframes bgPan {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, transparent 0%, var(--bg) 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-card);
+  font: 500 12px "DM Mono", monospace;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.hero h1 {
+  font-size: clamp(48px, 7vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  font-weight: 800;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-subtitle {
+  font-size: clamp(18px, 2.5vw, 22px);
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  color: white;
+  border: none;
+  box-shadow: 0 10px 30px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px var(--accent-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  transform: translateY(-2px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* ===== VALUE PROPOSITION SECTION ===== */
+.value-prop {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: 600 11px "DM Mono", monospace;
+  color: var(--accent-light);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 16px;
+  background: var(--bg-card);
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.value-card:nth-child(2)::before {
+  background: var(--gradient-2);
+}
+
+.value-card:nth-child(3)::before {
+  background: var(--gradient-3);
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--card-shadow);
+}
+
+.value-card:hover::before {
+  transform: scaleX(1);
+}
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 24px;
+  background: var(--gradient-1);
+}
+
+.value-card:nth-child(2) .value-icon {
+  background: var(--gradient-2);
+}
+
+.value-card:nth-child(3) .value-icon {
+  background: var(--gradient-3);
+}
+
+.value-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.value-card p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ===== SKILLS WITH IMPACT SECTION ===== */
+.skills-section {
+  padding: 120px 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.skill-impact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.skill-impact-card:hover {
+  border-color: var(--accent);
+  transform: translateX(8px);
+  box-shadow: var(--card-shadow);
+}
+
+.skill-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  background: var(--gradient-1);
+  flex-shrink: 0;
+}
+
+.skill-impact-card:nth-child(2) .skill-icon { background: var(--gradient-2); }
+.skill-impact-card:nth-child(3) .skill-icon { background: var(--gradient-3); }
+.skill-impact-card:nth-child(4) .skill-icon { background: var(--gradient-1); }
+.skill-impact-card:nth-child(5) .skill-icon { background: var(--gradient-2); }
+.skill-impact-card:nth-child(6) .skill-icon { background: var(--gradient-3); }
+
+.skill-content {
+  flex: 1;
+}
+
+.skill-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-problem {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.skill-solution {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.skill-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.skill-tag {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font: 500 11px "DM Mono", monospace;
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+/* ===== BUSINESS ACUMEN SECTION ===== */
+.business-section {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+}
+
+.business-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.business-content h3 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+}
+
+.business-content p {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.business-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.business-visual {
+  position: relative;
+  height: 500px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.business-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, transparent 0%, var(--bg-card) 100%),
+    url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover;
+  filter: brightness(0.7);
+}
+
+.floating-card {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--card-shadow);
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-card:nth-child(1) {
+  top: 80px;
+  left: 40px;
+  animation-delay: 0s;
+}
+
+.floating-card:nth-child(2) {
+  top: 180px;
+  right: 40px;
+  animation-delay: 2s;
+}
+
+.floating-card:nth-child(3) {
+  bottom: 80px;
+  left: 60px;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.float-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 12px;
+  background: var(--gradient-1);
+}
+
+.float-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.float-value {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* ===== MEDIUM POSTS SECTION ===== */
+.medium-section {
+  padding: 120px 0;
+}
+
+.medium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.medium-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.medium-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--card-shadow);
+}
+
+.medium-image {
+  height: 200px;
+  background: var(--gradient-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.medium-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.medium-card:hover .medium-image img {
+  transform: scale(1.1);
+}
+
+.medium-content {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.medium-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.medium-tag {
+  padding: 4px 10px;
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  font: 500 11px "DM Mono", monospace;
+  color: var(--accent-light);
+}
+
+.medium-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.medium-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 600 12px "DM Mono", monospace;
+  color: var(--accent-light);
+  margin-top: auto;
+}
+
+.medium-link:hover {
+  gap: 12px;
+}
+
+.medium-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.medium-cta .btn {
+  background: #00ab6c;
+  color: white;
+  border: none;
+}
+
+.medium-cta .btn:hover {
+  background: #008f5a;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.social-link:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* ===== SCROLL PROGRESS ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .value-grid,
+  .medium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .business-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  
+  .hero {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .value-grid,
+  .medium-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .business-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .business-visual {
+    height: 400px;
+  }
+  
+  .floating-card {
+    display: none;
+  }
+  
+  .section-title {
+    font-size: 32px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<nav>
+  <div class="wrap nav">
+    <a class="logo" href="#">Shafiya Naaz</a>
+    <div class="nav-right">
+      <div class="links">
+        <a href="#value">Value</a>
+        <a href="#skills">Skills</a>
+        <a href="#business">Business</a>
+        <a href="#medium">Medium</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
+        🌙
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap">
+      <div class="hero-content">
+        <div class="hero-badge">
+          Available for opportunities
+        </div>
+        <h1>
+          Transforming Data into<br>
+          <span>Business Value</span>
+        </h1>
+        <p class="hero-subtitle">
+          Data & Business Analyst helping companies make smarter decisions, 
+          optimize operations, and unlock growth through actionable insights 
+          powered by Python, SQL, and AI-driven analytics.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#value">
+            See How I Help →
+          </a>
+          <a class="btn btn-secondary" href="assets/resume.pdf" download>
+            Download Resume
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-value">3+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Internships</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">10+</div>
+            <div class="stat-label">Tools & Technologies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section class="value-prop" id="value">
+    <div class="wrap">
+      <div class="section-header fade-in">
+        <div class="section-badge">What I Deliver</div>
+        <h2 class="section-title">
+          Driving Business Outcomes<br>Through Data
+        </h2>
+        <p class="section-subtitle">
+          I don't just analyze data—I solve business problems that impact revenue, 
+          efficiency, and strategic decision-making.
+        </p>
+      </div>
+      
+      <div class="value-grid">
+        <div class="value-card fade-in">
+          <div class="value-icon">📊</div>
+          <h3>Data-Driven Decisions</h3>
+          <p>
+            Transform raw data into clear, actionable insights that help leadership 
+            make confident decisions faster. From dashboards to deep-dive analysis, 
+            I ensure every stakeholder understands the story behind the numbers.
+          </p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">🚀</div>
+          <h3>Operational Efficiency</h3>
+          <p>
+            Identify bottlenecks, optimize processes, and reduce costs through 
+            data analysis. I help businesses understand where time and resources 
+            are wasted—and how to fix it with measurable improvements.
+          </p>
+        </div>
+        
+        <div class="value-card fade-in">
+          <div class="value-icon">💡</div>
+          <h3>Growth Opportunities</h3>
+          <p>
+            Uncover hidden patterns in customer behavior, sales trends, and market 
+            dynamics. I help businesses identify new revenue streams, improve 
+            customer retention, and scale smarter with data-backed strategies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills with Impact Section -->
+  <section class="skills-section" id="skills">
+    <div class="wrap">
+      <div class="section-header fade-in">
+        <div class="section-badge">Skills & Impact</div>
+        <h2 class="section-title">
+          Technical Skills That Solve<br>Real Business Problems
+        </h2>
+        <p class="section-subtitle">
+          Every skill I've learned serves one purpose: solving business challenges 
+          and delivering measurable value.
+        </p>
+      </div>
+      
+      <div class="skills-grid">
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">🐍</div>
+          <div class="skill-content">
+            <div class="skill-name">Python & Pandas</div>
+            <div class="skill-problem">Problem: Messy, unstructured data wasting analyst time</div>
+            <div class="skill-solution">
+              I automate data cleaning, transformation, and feature engineering—reducing 
+              manual work by 70%+ and enabling faster insight generation. From EDA to 
+              predictive models, Python helps me turn chaos into clarity.
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Cleaning</span>
+              <span class="skill-tag">Automation</span>
+              <span class="skill-tag">EDA</span>
+              <span class="skill-tag">ML</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-content">
+            <div class="skill-name">SQL & PostgreSQL</div>
+            <div class="skill-problem">Problem: Critical data locked in databases, hard to access</div>
+            <div class="skill-solution">
+              I write complex queries to extract, join, and aggregate data from multiple 
+              sources—enabling self-service analytics and reducing dependency on IT teams. 
+              Window functions, CTEs, and query optimization are my daily tools.
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Querying</span>
+              <span class="skill-tag">Data Extraction</span>
+              <span class="skill-tag">Optimization</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">📈</div>
+          <div class="skill-content">
+            <div class="skill-name">Power BI & Tableau</div>
+            <div class="skill-problem">Problem: Stakeholders can't understand raw data or Excel sheets</div>
+            <div class="skill-solution">
+              I build interactive dashboards that tell a story—KPIs, trends, and anomalies 
+              at a glance. Executives get real-time visibility into performance, enabling 
+              faster course corrections and data-driven strategy.
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Dashboards</span>
+              <span class="skill-tag">KPIs</span>
+              <span class="skill-tag">Storytelling</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-content">
+            <div class="skill-name">AI & Machine Learning</div>
+            <div class="skill-problem">Problem: Reactive decisions based on historical data only</div>
+            <div class="skill-solution">
+              I apply predictive analytics (regression, classification, clustering) to 
+              forecast trends, segment customers, and identify risks before they become 
+              problems. AI helps me move from "what happened" to "what will happen."
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Predictive Analytics</span>
+              <span class="skill-tag">Forecasting</span>
+              <span class="skill-tag">Segmentation</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">🏗️</div>
+          <div class="skill-content">
+            <div class="skill-name">Data Warehousing & ETL</div>
+            <div class="skill-problem">Problem: Data scattered across systems, inconsistent reporting</div>
+            <div class="skill-solution">
+              I design structured data warehouses with Bronze-Silver-Gold layers, ensuring 
+              data quality, consistency, and accessibility. ETL pipelines automate data 
+              flow, reducing manual errors and saving hours weekly.
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Data Modeling</span>
+              <span class="skill-tag">ETL</span>
+              <span class="skill-tag">SSMS</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="skill-impact-card fade-in">
+          <div class="skill-icon">📊</div>
+          <div class="skill-content">
+            <div class="skill-name">Business Analysis</div>
+            <div class="skill-problem">Problem: Technical teams and business stakeholders misaligned</div>
+            <div class="skill-solution">
+              I bridge the gap—translating business requirements into technical specs and 
+              vice versa. Requirements gathering, stakeholder interviews, and process 
+              mapping ensure solutions actually solve the right problems.
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Requirements</span>
+              <span class="skill-tag">Stakeholder Mgmt</span>
+              <span class="skill-tag">Process Mapping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Business Acumen Section -->
+  <section class="business-section" id="business">
+    <div class="wrap">
+      <div class="section-header fade-in">
+        <div class="section-badge">Business Acumen</div>
+        <h2 class="section-title">
+          Understanding Business,<br>Not Just Data
+        </h2>
+        <p class="section-subtitle">
+          Technical skills are table stakes. What sets me apart is my ability to 
+          understand business context, ask the right questions, and deliver 
+          insights that drive action.
+        </p>
+      </div>
+      
+      <div class="business-grid">
+        <div class="business-content fade-in">
+          <h3>
+            I Think Like a Business Leader,<br>Not Just an Analyst
+          </h3>
+          <p>
+            Every analysis I do starts with one question: "What business problem are we 
+            solving?" Whether it's reducing customer churn, optimizing pricing, or 
+            improving operational efficiency, I ensure my work connects directly to 
+            business outcomes.
+          </p>
+          <p>
+            I've learned to speak the language of business—ROI, KPIs, OKRs, unit economics, 
+            and strategic priorities. This allows me to partner with stakeholders, not 
+            just serve them, and ensure analytics investments deliver real value.
+          </p>
+          
+          <div class="business-metrics">
+            <div class="metric-card">
+              <div class="metric-value">ROI</div>
+              <div class="metric-label">Focused Analysis</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">KPIs</div>
+              <div class="metric-label">Business-Aligned</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">Strategy</div>
+              <div class="metric-label">Data-Backed</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-value">Impact</div>
+              <div class="metric-label">Measurable</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="business-visual fade-in">
+          <div class="floating-card">
+            <div class="float-icon">📈</div>
+            <div class="float-title">Revenue Growth</div>
+            <div class="float-value">Identified 15% opportunity</div>
+          </div>
+          <div class="floating-card">
+            <div class="float-icon">💰</div>
+            <div class="float-title">Cost Reduction</div>
+            <div class="float-value">Saved 20+ hours/week</div>
+          </div>
+          <div class="floating-card">
+            <div class="float-icon">🎯</div>
+            <div class="float-title">Customer Insights</div>
+            <div class="float-value">Improved retention 12%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medium Posts Section -->
+  <section class="medium-section" id="medium">
+    <div class="wrap">
+      <div class="section-header fade-in">
+        <div class="section-badge">Writing & Insights</div>
+        <h2 class="section-title">
+          Sharing Knowledge on<br>Medium
+        </h2>
+        <p class="section-subtitle">
+          I believe in learning in public. Through my Medium articles, I share 
+          practical insights on data analytics, business intelligence, and 
+          career growth—helping others on their journey.
+        </p>
+      </div>
+      
+      <div class="medium-grid">
+        <article class="medium-card fade-in">
+          <div class="medium-image">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Analytics">
+          </div>
+          <div class="medium-content">
+            <div class="medium-meta">
+              <span class="medium-tag">Data Analytics</span>
+              <span>5 min read</span>
+            </div>
+            <h3 class="medium-title">
+              How I Use Python to Automate Data Cleaning and Save 10+ Hours Per Week
+            </h3>
+            <a class="medium-link" href="https://medium.com/@yourusername" target="_blank" rel="noopener">
+              Read on Medium →
+            </a>
+          </div>
+        </article>
+        
+        <article class="medium-card fade-in">
+          <div class="medium-image">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Intelligence">
+          </div>
+          <div class="medium-content">
+            <div class="medium-meta">
+              <span class="medium-tag">Business Intelligence</span>
+              <span>7 min read</span>
+            </div>
+            <h3 class="medium-title">
+              From Data to Decisions: Building Dashboards That Executives Actually Use
+            </h3>
+            <a class="medium-link" href="https://medium.com/@yourusername" target="_blank" rel="noopener">
+              Read on Medium →
+            </a>
+          </div>
+        </article>
+        
+        <article class="medium-card fade-in">
+          <div class="medium-image">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Growth">
+          </div>
+          <div class="medium-content">
+            <div class="medium-meta">
+              <span class="medium-tag">Career</span>
+              <span>6 min read</span>
+            </div>
+            <h3 class="medium-title">
+              Breaking Into Data Analytics: My Journey From Student to Analyst
+            </h3>
+            <a class="medium-link" href="https://medium.com/@yourusername" target="_blank" rel="noopener">
+              Read on Medium →
+            </a>
+          </div>
+        </article>
+      </div>
+      
+      <div class="medium-cta">
+        <a class="btn" href="https://medium.com/@yourusername" target="_blank" rel="noopener">
+          View All Articles on Medium →
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-content">
+      <div class="footer-text">
+        © 2026 Shafiya Naaz — Data & Business Analyst
+      </div>
+      <div class="social-links">
+        <a class="social-link" href="https://github.com/ShafiyaNaaz27" target="_blank" rel="noopener" title="GitHub">
+          GitHub
+        </a>
+        <a class="social-link" href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" title="LinkedIn">
+          LinkedIn
+        </a>
+        <a class="social-link" href="mailto:your.email@example.com" title="Email">
+          ✉️
+        </a>
+        <a class="social-link" href="https://medium.com/@yourusername" target="_blank" rel="noopener" title="Medium">
+          Medium
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+// ===== THEME TOGGLE =====
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+html.setAttribute('data-theme', savedTheme);
+updateThemeIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = html.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+  themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
+}
+
+// ===== SCROLL PROGRESS =====
+const scrollProgress = document.getElementById('scrollProgress');
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = scrollPercent + '%';
+});
+
+// ===== SCROLL ANIMATIONS =====
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  observer.observe(el);
+});
+
+// ===== SMOOTH SCROLL =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const navHeight = document.querySelector('nav').offsetHeight;
+      const targetPosition = targetElement.offsetTop - navHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// ===== NAVBAR SCROLL EFFECT =====
+const nav = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 10px 40px rgba(0,0,0,0.3)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
